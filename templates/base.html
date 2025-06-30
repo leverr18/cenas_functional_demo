@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Cenas Kitchen Demo{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+<!-- NAVIGATION WITH DROPDOWNS -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="{{ url_for('home') }}">
+  <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Cenas Kitchen Logo" class="nav-logo" />
+</a>
+
+  </div>
+
+  <div class="nav-links">
+    <!-- MENU dropdown -->
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Menu</a>
+      <div class="dropdown-content">
+        <a href="#">Main Menu</a>
+        <a href="#">Drinks & Desserts</a>
+        <a href="#">Vegetarian Menu</a>
+      </div>
+    </div>
+
+    <!-- ABOUT dropdown -->
+    <div class="dropdown">
+      <a href="{{ url_for('about_us') }}" class="dropbtn">About</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('about_us') }}#locations">Locations</a>
+      </div>
+    </div>
+
+    <!-- CATERING dropdown -->
+    <div class="dropdown">
+      <a href="{{ url_for('catering') }}" class="dropbtn">Catering</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('catering') }}">Place Order</a>
+        <a href="{{ url_for('catering') }}#catering-menu">Catering Menu</a>
+        <a href="#">Gallery</a>
+      </div>
+    </div>
+
+    <!-- COMMUNITY dropdown -->
+    <div class="dropdown">
+      <a href="{{ url_for('community') }}" class="dropbtn">Community</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('community') }}">Spirit Day</a>
+        <a href="{{ url_for('donations') }}">Donations</a>
+      </div>
+    </div>
+
+  <!-- CAREER dropdown -->
+    <div class="dropdown">
+      <a href="{{ url_for('career') }}" class="dropbtn">Career</a>
+    </div>
+
+    <!-- CONTACT US -->
+    <div class="dropdown">
+      <a href="{{ url_for('contact') }}" class="dropbtn">Contact Us</a>
+    </div>
+
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Login</a>
+    </div>
+  </div> <!-- ✅ NOW properly closes .nav-links -->
+</nav>
+  <!-- PAGE CONTENT -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>

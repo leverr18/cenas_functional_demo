@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Catering - Cenas Kitchen{% endblock %}
+
+{% block content %}
+  <section class="catering-hero">
+    <div class="catering-wrapper">
+      <div class="catering-info-box">
+        <h2>We Know Catering</h2>
+        <p>Make your next event unforgettable with Cenas Kitchen catering — where every dish is crafted with love, bold flavor, and authentic Tex-Mex flair. Whether it's a celebration or a corporate gathering, we bring the fiesta to you.</p>
+        <p>If you’re interested in our catering services, please fill out the form below. A member of our catering team will contact you regarding your event within 2–5 hours.</p>
+      </div>
+      <div class="catering-form-box">
+        <!-- Embed your JotForm here -->
+      </div>
+    </div>
+    <div id="catering-menu"></div>
+    <div class="catering-header">
+      <h3>Catering Menu</h3>
+      <p>Our catering menu features a delicious variety of authentic Tex-Mex dishes made fresh daily. From savory mains to flavorful sides and desserts, we’ve got the perfect spread to make your event unforgettable.</p>
+      <img src="{{ url_for('static', filename='images/catering_menu.png') }}" alt="Catering Hero" class="catering-img" />
+    </div>
+  </section>
+{% endblock %}
+
+
