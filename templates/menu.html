@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Menu - Cenas Kitchen{% endblock %}
+
+{% block content %}
+
+<section class="menu-header">
+  <h1>Our Menu</h1>
+  <p>Filter by category and explore our favorites</p>
+
+  <!-- Filter Navigation -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% for category in menu_items %}
+      <button class="filter-btn" data-filter="{{ category.category | lower | replace(' ', '-') }}">
+        {{ category.category }}
+      </button>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Menu Grid -->
+<section class="menu-grid">
+  {% for category in menu_items %}
+    {% for item in category["items"] %}
+      <div class="menu-card" data-category="{{ category.category | lower | replace(' ', '-') }}">
+        {% if item.image %}
+          <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
+        {% endif %}
+        <div class="menu-info">
+          <h3>{{ item.name }}</h3>
+
+          {% if item.price %}
+            <span class="price">${{ item.price }}</span>
+          {% endif %}
+
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+
+          {% if item.options %}
+            {% for option in item.options %}
+              {% if option.variants %}
+                <!-- Nested variant options -->
+                <div class="combo-group">
+                  <p class="combo-title">{{ option.type }}</p>
+                  <div class="item-options-table">
+                    {% for v in option.variants %}
+                      <div class="option-row">
+                        <span class="option-type">{{ v.type }}</span>
+                        {% if v.price is defined %}
+                          <span class="option-price">${{ "%.2f"|format(v.price|float) }}</span>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <!-- Single-level options -->
+                <div class="item-options-table">
+                  <div class="option-row">
+                    <span class="option-type">{{ option.type }}</span>
+                    {% if option.price is defined %}
+                      <span class="option-price">${{ "%.2f"|format(option.price|float) }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</section>
+
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+{% endblock %}
+
+
+
+
+
