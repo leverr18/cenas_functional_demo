@@ -24,10 +24,10 @@
   <div class="nav-links">
     <!-- MENU dropdown -->
     <div class="dropdown">
-      <a href="#" class="dropbtn">Menu</a>
+      <a href="{{ url_for('menu') }}" class="dropbtn">Menu</a>
       <div class="dropdown-content">
-        <a href="#">Main Menu</a>
-        <a href="#">Drinks & Desserts</a>
+        <a href="{{ url_for('menu') }}">Main Menu</a>
+        <a href="{{ url_for('drinks') }}">Drinks & Desserts</a>
         <a href="#">Vegetarian Menu</a>
       </div>
     </div>

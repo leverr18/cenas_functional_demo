@@ -7,13 +7,15 @@ locations = [
         "name": "Cenas Kitchen - Tomball",
         "address": "27727 Tomball Parkway, Tomball, TX 77375",
         "lat": 30.078674,
-        "lng": -95.629883
+        "lng": -95.629883,
+        "order_url": "https://order.toasttab.com/online/aguirres-tex-mex-2-tomball-27727-tomball-parkway"
     },
     {
         "name": "Cenas Kitchen - Houston",
         "address": "15650 Farm To Market rd. 529, Houston TX 77095",
         "lat": 29.879688,
-        "lng": -95.644264
+        "lng": -95.644264,
+        "order_url": "https://order.toasttab.com/online/aguirres-tex-mex-1-copperfield-6166-hwy-6-north-unit-22"
     },
 ]
 
@@ -567,6 +569,105 @@ menu_items = [
     }
 ]
 
+drink_items = [
+    {
+        "category": "Margarita Cantina",
+        "items": [
+            {"name": "House Margarita SM", "description": "Non-Alcholic also Available", "price": "$6", "image": "house_marg_SM.jpg"},
+            {"name": "House Margarita LG", "description": "Non-Alcoholic also Available", "price": "$12", "image": "house_marg.jpg"},
+            {"name": "CenaRita", "description": "House rita with a top shelf kick Don Julio Blanco & Grand Marnier.", "price": "$12"},
+            {"name": "Gold Rush Rita SM", "description": "Jose Cuervo Gold, orange liquer.", "price": "$6", "image": "gold_rush_SM.jpg"},
+            {"name": "Gold Rush Rita LG", "description": "Jose Cuervo Gold, orange liquer.", "price": "$11", "image": "gold_rush_LG.jpg"},
+            {"name": "Mango Tango SM", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$6", "image": "mango_tango_SM.jpg"},
+            {"name": "Mango Tango LG", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$10", "image": "mango_tango_LG.jpg"},
+            {"name": "Beer Rita", "description": "Margarita and an ice-cold beer.", "price": "$10", "image": "beer_rita_.jpg"},
+            {"name": "La Granada", "description": "Jalapeno infused tequila, fresh lime, pomegranate, chili salt.", "price": "$10", "image": "la_grenada.jpg"},
+            {"name": "Skinny Summer", "description": "Altos Plata, agave, fresh lime", "price": "$9", "image": "skinny_summer.jpg"},
+            {"name": "Mezcalita", "description": "Mezcal, Grand Marnier, pineapple, jalapeno", "price": "$12", "image": "mezcalita.jpg"},
+            {"name": "Guava TikiRita", "description": "Milagro Silver, guava, lime, allspice.", "price": "$12"}
+        ]
+    },
+    {
+        "category": "Hand Shaken Cocktails",
+        "items": [
+            {"name": "Watermelon Ranchwater", "description": "1800 Silver, fresh watermelon, lime, Topo Chico. Non-Alcoholic also Available.", "price": "$11", "image": "watermelon_ranchwater.jpg"},
+            {"name": "Uno Mas Mule", "description": "House infused jalapeno tequila, fresh lime, ginger beer", "price": "$10"},
+            {"name": "Reposado Old Fashioned", "description": "Milagro Reposado, agave, chocolate bitters, Angostura.", "price": "$12"},
+            {"name": "Tequila Berry Fizz", "description": "Altos Plata, mixed berry puree, fresh lime, ginger beer.", "price": "$11", "image": "tequila_berry_fizz_pretty.jpg"},
+            {"name": "Fresh Mint Paloma", "description": "Patron Silver, fresh lime, mint, grapefruit, Topo Chico.", "price": "$11"},
+            {"name": "Cantaritos Michelada", "description": "Homemade michelada mix and an ice-cold beer of your choosing.", "price": "$5", "image": "cantaritos_michelada.jpg"},
+            {"name": "Sangria", "description": "Red sangria with fresh fruit or swirled into a frozen margarite", "price": "$8", "image": "sangria.jpg"},
+            {"name": "Mango Mama", "description": "Tito's Vodka, lime, fresh mango, ginger beer.", "price": "$9", "image": "mango_mama.jpg"},
+            {"name": "Cenas Paradise Daquiris", "description": "Silver Rum, fresh lime, and your choice of flavor.", "price": "$9", "image": "cenas_paradise_daquiris.jpg"},
+            {"name": "Romancito", "description": "Fresh rosemary, gin, lemon, elderflower liquer.", "price": "$9"},
+            {"name": "New Fashioned", "description": "Old forester bourbon, rye whisky, black walnut and peach bitters.", "price": "$11"},
+            {"name": "Non Alcoholic Daquiri", "price": "$7"},
+            {"name": "Non Alcoholic Mojito", "price": "$5"},
+            {"name": "Non Alcoholic Passionfruit Kiss", "price": "$5"},
+            {"name": "Non Alcoholic Bloody Mary", "price": "$5"},
+            {"name": "Non Alcoholic Michelada W/ Topo", "price": "$5"},
+            {"name": "Non Alcoholic Watermelon Ranchwater", "price": "$5"},
+            {"name": "Non Alcoholic Margarita", "price": "$7"}
+        ]
+    },
+    {
+        "category": "Dessert Drinks",
+        "items": [
+            {"name": "Carajillo", "description": "Espresso, Licor 43", "price": "$10", "image": "carajillo.jpg"},
+            {"name": "Classic Espresso Martini", "description": "Kettle One, espresso, cane sugar.", "price": "$10", "image": "espresso_martini_pretty.jpg"},
+            {"name": "Tequila Alejandro", "description": "Milagro Silver, chocolate liqueur, ice cream, toasted marshmallow.", "price": "$11", "image": "alejandro_tequila.jpg"}
+        ]
+    },
+    {
+        "category": "Ice Cold Beer",
+        "items": [
+            {"name": "Miller Lite", "price": "$4.50"},
+            {"name": "Budweiser", "price": "$4.50"},
+            {"name": "Michelob Ultra", "price": "$4.50"},
+            {"name": "Bud Light", "price": "$4.50"},
+            {"name": "Coors Light", "price": "$4.50"},
+            {"name": "Shinner Block", "price": "$4.50"},
+            {"name": "Negra Modelo", "price": "$4.50"},
+            {"name": "Model Especial", "price": "$4.50"},
+            {"name": "Corona Extra", "price": "$4.50"},
+            {"name": "Corona Light", "price": "$4.50"},
+            {"name": "Dos XX Larger", "price": "$4.50"},
+            {"name": "Tacate", "price": "$4.50"},
+            {"name": "Pacifico", "price": "$4.go"}
+        ]
+    },
+    {
+        "category": "Flavors",
+        "items": [
+            {"name": "Mango"},
+            {"name": "Strawberry"},
+            {"name": "Pina Colada"},
+            {"name": "Peach"},
+            {"name": "Mixed Berry"},
+            {"name": "Watermelon"},
+            {"name": "Banana"}
+        ]
+    },
+    {
+        "category": "Floaters",
+        "items": [
+            {"name": "Grand Marneir Floater", "price": "$2"},
+            {"name": "Cointreau Floater", "price": "$2"},
+            {"name": "Patron Citronage Floater", "price": "$2"},
+            {"name": "Don Julio Floater", "price": "$3"},
+            {"name": "Patron Silver Floater", "price": "$3"},
+            {"name": "1800 Silver Floater", "price": "$3"},
+            {"name": "Cuervo Gold Floater", "price": "$3"},
+            {"name": "Jalapeno Tequila Floater", "price": "$3"},
+            {"name": "Don Julio Reposado Floater", "price": "$3"},
+            {"name": "Patron Reposado", "price": "$3"},
+            {"name": "Patron Anejo", "price": "$4"},
+            {"name": "1800 Reposado", "price": "$3"},
+            {"name": "1800 Anejo", "price": "$4"}
+        ]
+    }
+]
+
 
 @app.route('/')
 def home():
@@ -614,11 +715,15 @@ def gallery():
 
 @app.route('/drinks')
 def drinks():
-    return render_template("drinkmenu.html")
+    return render_template("drinkmenu.html", drink_items=drink_items)
+
+@app.route('/drink_data')
+def drink_data():
+    return jsonify(drink_items)
 
 @app.route('/orderlocation')
 def orderlocation():
-    return render_template("chooselocation.html")
+    return render_template("chooselocation.html", locations=locations)
 
 
 

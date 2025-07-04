@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Drinks - Cenas Kitchen{% endblock %}
+
+{% block content %}
+
+<section class="menu-header">
+  <h1>Drink Menu</h1>
+  <p>Filter by category and explore our handcrafted drinks</p>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% for category in drink_items %}
+      <button class="filter-btn" data-filter="{{ category.category | lower | replace(' ', '-') }}">
+        {{ category.category }}
+      </button>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="menu-grid">
+  {% for category in drink_items %}
+    {% for item in category["items"] %}
+      <div class="menu-card" data-category="{{ category.category | lower | replace(' ', '-') }}">
+        {% if item.image %}
+          <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
+        {% endif %}
+        <div class="menu-info">
+          <h3>{{ item.name }}</h3>
+          {% if item.price %}
+            <span class="price">{{ item.price }}</span>
+          {% endif %}
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</section>
+
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+{% endblock %}
+
+

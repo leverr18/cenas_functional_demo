@@ -1130,6 +1130,7 @@ html {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 2rem;
   padding: 3rem 2rem;
+  justify-content: baseline;
 }
 
 .menu-card {
@@ -1138,6 +1139,7 @@ html {
   overflow: hidden;
   box-shadow: 0 8px 20px -5px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  justify-content: center;
 }
 
 .menu-card:hover {
@@ -1169,7 +1171,7 @@ html {
 
 .price {
   font-weight: bold;
-  color: #025cb1;
+  color: #f1b94a;
   font-size: 1.1rem;
 }
 
@@ -1195,7 +1197,7 @@ html {
 
 .option-price {
   text-align: right;
-  color: #025cb1;
+  color: #f1b94a;
 }
 
 .item-options-table:hover {
@@ -1203,32 +1205,151 @@ html {
   border-radius: 10px;
 }
 
+/* chooce location to eat at */
+/* ===== MAP + SIDEBAR LAYOUT ===== */
+.map-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
 
+/* Map box */
+#map {
+  flex: 1 1 60%;
+  height: 500px;
+  min-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-/* Responsive */
-@media (max-width: 768px) {
-  .catering-wrapper {
+/* Sidebar */
+#sidebar {
+  flex: 1 1 35%;
+  min-width: 280px;
+  background-color: #fff8f4;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#sidebar h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d1e10;
+}
+
+#location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#location-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#location-list strong {
+  display: block;
+  font-weight: 600;
+  color: #c0392b;
+  margin-bottom: 0.25rem;
+}
+
+/* ===== Location Buttons ===== */
+.location-buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.location-buttons a.btn-sm {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Primary solid button */
+.location-buttons a.btn-sm {
+  background-color: #ca4123;
+  color: white;
+}
+
+.location-buttons a.btn-sm:hover {
+  background-color: #a9341c;
+}
+
+/* Outline button */
+.location-buttons a.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid #ca4123;
+  color: #ca4123;
+}
+
+.location-buttons a.btn-outline:hover {
+  background-color: #f7eae6;
+}
+
+/* Accent button */
+.location-buttons a.btn-accent {
+  background-color: #6c3b1e;
+  color: white;
+}
+
+.location-buttons a.btn-accent:hover {
+  background-color: #522e16;
+}
+
+/* ===== Responsive Behavior ===== */
+@media screen and (max-width: 768px) {
+  .map-container {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
   }
 
-  .catering-info-box,
-  .catering-form-box {
-    width: 100%;
+  #map {
+    height: 300px;
+  }
+
+  #sidebar {
+    padding: 1rem;
+  }
+
+  .location-buttons {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 768px) {
-  .item-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .item-price {
-    margin-top: 0.3rem;
-  }
-
-  body {
-    padding: 0.5rem;
-  }
+.sidebar-order-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 10px;
+  background-color: #ca4123;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
+
+.sidebar-order-btn:hover {
+  background-color: #a5341b;
+}
+
+
+
+/* mobile styling (this is gonna be rough) */

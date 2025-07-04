@@ -15,10 +15,10 @@
   <div class="nav-links">
     <!-- MENU dropdown -->
     <div class="dropdown">
-      <a href="#" class="dropbtn">Menu</a>
+      <a href="{{ url_for('menu') }}" class="dropbtn">Menu</a>
       <div class="dropdown-content">
-        <a href="#">Main Menu</a>
-        <a href="#">Drinks & Desserts</a>
+        <a href="{{ url_for('menu') }}">Main Menu</a>
+        <a href="{{ url_for('drinks') }}">Drinks & Desserts</a>
         <a href="#">Vegetarian Menu</a>
       </div>
     </div>
@@ -94,19 +94,19 @@
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-drinks.webp') }}" alt="Drinks">
     <h2>Drink Specials</h2>
-    <a href="#drinks">View Drinks</a>
+    <a href="{{ url_for('drinks') }}">View Drinks</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-menu.webp') }}" alt="Menu">
     <h2>Menu</h2>
-    <a href="#menu">View Menu</a>
+    <a href="{{ url_for('menu') }}">View Menu</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-order.webp') }}" alt="Order">
     <h2>Order Now</h2>
-    <a href="#order">Order</a>
+    <a href="{{ url_for('orderlocation') }}">Order</a>
   </div>
 </section>
 
@@ -121,9 +121,9 @@
       We offer the same delicious food served daily at our Mexican restaurant. </br>
       Learn more how we can take your event in the Houston and Tomball area to the next level.
     </p>
-    <button class="btn btn-blue">Order Now</button>
-    <button class="btn btn-red">View Specials</button>
-    <button class="btn btn-brown">Contact Us</button>
+    <a href="{{ url_for('catering') }}" class="btn btn-blue">Order Now</a>
+    <a href="{{ url_for('menu') }}" class="btn btn-red">View Specials</a>
+    <a href="{{ url_for('contact') }}" class="btn btn-brown">Contact Us</a>
   </div>
 </section>
   <footer>
