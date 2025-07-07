@@ -10,7 +10,10 @@
 
  <nav class="navbar">
   <div class="nav-left">
+    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo" class="nav-logo">
   </div>
+
+  <button class="mobile-nav-toggle">&#x22EE;</button> <!-- 3 vertical dots -->
 
   <div class="nav-links">
     <!-- MENU dropdown -->
@@ -18,9 +21,13 @@
       <a href="{{ url_for('menu') }}" class="dropbtn">Menu</a>
       <div class="dropdown-content">
         <a href="{{ url_for('menu') }}">Main Menu</a>
-        <a href="{{ url_for('drinks') }}">Drinks & Desserts</a>
+        <a href="{{ url_for('drinks') }}">Drink Menu</a>
         <a href="#">Vegetarian Menu</a>
       </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="{{ url_for('orderlocation') }}" class="dropbtn">Order Now</a>
     </div>
 
     <!-- ABOUT dropdown -->
@@ -66,29 +73,25 @@
   </div>
 </nav>
 
-  <!-- Header -->
-  <header class="site-header">
-  <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Cenas Kitchen Logo" class="logo" />
-  <h1>Cenas Kitchen</h1>
-  <p class="subheading">Authentic Tex-Mex, Made with Love</p>
-</header>
-
-
 <header class="hero-carousel">
   <div class="carousel-track">
-
-    <!-- Real slides -->
     <img src="{{ url_for('static', filename='images/hero.webp') }}" alt="Hero 1" loading="lazy" />
-    <img src="{{ url_for('static', filename='images/food2.webp') }}" alt="Hero 2" loading="lazy" />
-    <img src="{{ url_for('static', filename='images/food3.webp') }}" alt="Hero 3" loading="lazy" />
-    <img src="{{ url_for('static', filename='images/header3.webp') }}" alt="Hero 4" loading="lazy" />
-    <img src="{{ url_for('static', filename='images/bar.webp') }}" alt="Hero 5" loading="lazy"/>
+    <img src="{{ url_for('static', filename='images/hero3.webp') }}" alt="Hero 2" loading="lazy" />
+    <img src="{{ url_for('static', filename='images/espresso_martini_pretty.webp') }}" alt="Hero 3" loading="lazy" />
+    <img src="{{ url_for('static', filename='images/hero7.webp') }}" alt="Hero 4" loading="lazy" />
+    <img src="{{ url_for('static', filename='images/cateringpage.webp') }}" alt="Hero 5" loading="lazy" />
+  </div>
 
+  <div class="hero-overlay">
+    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Cenas Kitchen Logo" class="logo" />
+    <h1>Cenas Kitchen</h1>
+    <p class="subheading">Authentic Tex-Mex, Made with Love</p>
   </div>
 
   <button class="carousel-btn prev">&#10094;</button>
   <button class="carousel-btn next">&#10095;</button>
 </header>
+
 
 <section class="options-section">
   <div class="option">
@@ -121,10 +124,12 @@
       We offer the same delicious food served daily at our Mexican restaurant. </br>
       Learn more how we can take your event in the Houston and Tomball area to the next level.
     </p>
+    <div class="catering-buttons">
     <a href="{{ url_for('catering') }}" class="btn btn-blue">Order Now</a>
     <a href="{{ url_for('menu') }}" class="btn btn-red">View Specials</a>
     <a href="{{ url_for('contact') }}" class="btn btn-brown">Contact Us</a>
   </div>
+</div>
 </section>
   <footer>
     <p>&copy; 2025 Cenas Kitchen</p>

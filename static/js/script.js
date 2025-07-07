@@ -105,6 +105,40 @@ document.addEventListener('DOMContentLoaded', () => {
     startCarousel();
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+const toggle = document.querySelector('.mobile-nav-toggle') || document.querySelector('.mobile-nav-toggle-base');
+const navLinks = document.querySelector('.nav-links') || document.querySelector('.nav-links-base');
+
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}})
+
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    const dropdownLinks = document.querySelectorAll('.has-submenu');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const parent = link.parentElement;
+        const dropdown = parent.querySelector('.dropdown-content');
+
+        if (!parent.classList.contains('open')) {
+          e.preventDefault(); // stop navigating
+          parent.classList.add('open');
+        } else {
+          // second click navigates
+          window.location.href = link.href;
+        }
+      });
+    });
+  }
+});
+
+
 
 
 

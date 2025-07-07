@@ -5,23 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  // Use Flask-rendered DOM list instead of fetching again
   const listItems = document.querySelectorAll('#location-list li');
+  const markers = [];
 
   listItems.forEach(li => {
     const lat = parseFloat(li.dataset.lat);
     const lng = parseFloat(li.dataset.lng);
     const name = li.querySelector('strong')?.textContent || 'Location';
-    const address = li.innerHTML;
 
     const marker = L.marker([lat, lng])
       .addTo(map)
-      .bindPopup(address);
+      .bindTooltip(name, { permanent: true, direction: 'top' });
+
+    markers.push(marker);
 
     li.addEventListener('click', () => {
       map.setView([lat, lng], 14);
       marker.openPopup();
     });
   });
+
+  // 🩷 FIX: re-calculate map size when window resizes
+  window.addEventListener('resize', () => {
+    map.invalidateSize();
+  });
 });
+
+
 

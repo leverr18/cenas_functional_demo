@@ -11,7 +11,40 @@
         <p>If you’re interested in our catering services, please fill out the form below. A member of our catering team will contact you regarding your event within 2–5 hours.</p>
       </div>
       <div class="catering-form-box">
-        <!-- Embed your JotForm here -->
+        <form action="https://formspree.io/f/xkgblner" method="POST" class="formspree-form">
+          <input type="hidden" name="_next" value="{{ url_for('thank_you') }}">
+          <h2>Catering Order</h2>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="text" name="address" placeholder="Event Address" required>
+
+          <input type="date" name="event_date" placeholder="Event Date" required>
+          <input type="time" name="start_time" placeholder="Start Time" required>
+          <input type="time" name="end_time" placeholder="End Time" required>
+
+          <input type="number" name="guests" placeholder="Number of Guests" min="1" required>
+
+          <select name="location" required>
+            <option value="" disabled selected>Select Location</option>
+            <option value="Houston">Houston</option>
+            <option value="Tomball">Tomball</option>
+          </select>
+
+          <input type="text" name="meat" placeholder="Preferred Meat (e.g., Chicken, Beef, Pork)" required>
+          <input type="text" name="beans" placeholder="Preferred Beans (e.g., Refried, Black, None)" required>
+          <input type="text" name="tortilla" placeholder="Preferred Tortilla (e.g., Flour, Corn)" required>
+
+          <h3>Payment Information</h3>
+          <input type="text" name="card_name" placeholder="Cardholder Name" required>
+          <input type="text" name="card_number" placeholder="Card Number" required>
+          <input type="text" name="card_expiration" placeholder="Expiration Date (MM/YY)" required>
+          <input type="text" name="card_cvv" placeholder="CVV" required>
+
+          <textarea name="additional_info" placeholder="Additional Info or Special Requests"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
     <div id="catering-menu"></div>
@@ -22,5 +55,6 @@
     </div>
   </section>
 {% endblock %}
+
 
 

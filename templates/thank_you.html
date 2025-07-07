@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You - Cenas Kitchen{% endblock %}
+
+{% block content %}
+  <section class="thank-you">
+    <div class="thank-you-wrapper">
+      <h2>Thank You!</h2>
+      <p>We’ve received your submission and will get back to you shortly. In the meantime, feel free to explore our menu or contact us with any further questions.</p>
+      <a href="{{ url_for('index') }}" class="btn">Return Home</a>
+    </div>
+  </section>
+{% endblock %}
