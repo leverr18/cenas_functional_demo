@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Cenas Kitchen{% endblock %}
+
+{% block content %}
+</head>
+
+<body>
+
+<div class="login-container">
+  <h2>Employee Login</h2>
+  <p>Please sign in to access the employee portal</p>
+
+  <form method="POST" action="{{ url_for('login') }}">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Log In</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

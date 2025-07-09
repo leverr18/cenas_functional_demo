@@ -1,61 +1,51 @@
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const filter = btn.dataset.filter;
-
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const filter = btn.dataset.filter;
-
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    document.querySelectorAll('.menu-card').forEach(card => {
-      const category = card.dataset.category;
-      if (filter === 'specials') {
-        document.querySelector('.specials-banner').style.display = 'block';
-        card.style.display = 'none';
-      } else {
-        document.querySelector('.specials-banner').style.display = 'none';
-        card.style.display = (filter === category) ? 'block' : 'none';
-      }
-    });
-
-    // ✅ New: scroll to menu-grid on mobile
-    if (window.innerWidth <= 768) {
-      const grid = document.querySelector('.menu-grid');
-      if (grid) {
-        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  });
-});
-    if (filter === 'specials') {
-      specialsBanner.style.display = 'block';
-      menuGrid.style.display = 'none';
-    } else {
-      specialsBanner.style.display = 'none';
-      menuGrid.style.display = 'grid';
-
-      document.querySelectorAll('.menu-card').forEach(card => {
-        const category = card.dataset.category;
-        if (filter === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  });
-});
-
-// trigger click on the first category tab on page load (skip specials)
-document.querySelectorAll('.filter-btn')[1].click();
-
 document.addEventListener('DOMContentLoaded', () => {
-  const toggles = document.querySelectorAll('.category-toggle');
+  const buttons = document.querySelectorAll('.filter-btn');
+  const menuCards = document.querySelectorAll('.menu-card');
+  const specialsBanner = document.querySelector('.specials-banner');
+  const menuGrid = document.querySelector('.menu-grid');
 
+  let isInitialLoad = true;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Toggle active button
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (filter === 'specials') {
+        specialsBanner.style.display = 'block';
+        menuGrid.style.display = 'none';
+      } else {
+        specialsBanner.style.display = 'none';
+        menuGrid.style.display = 'grid';
+
+        // Show only matching cards
+        menuCards.forEach(card => {
+          const category = card.dataset.category;
+          card.style.display = (filter === category) ? 'block' : 'none';
+        });
+      }
+
+      // ✅ Scroll to menu grid on mobile — but skip on initial load
+      if (!isInitialLoad && window.innerWidth <= 768) {
+        if (menuGrid) {
+          menuGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      isInitialLoad = false; // mark that we’re past initial load
+    });
+  });
+
+  // Trigger click on the first real category tab (skip specials) on page load
+  if (buttons[1]) {
+    buttons[1].click();
+  }
+
+  // Optional: category toggle logic (if you have any collapsible categories)
+  const toggles = document.querySelectorAll('.category-toggle');
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const items = toggle.nextElementSibling;
@@ -63,5 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
 
 

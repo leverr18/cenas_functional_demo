@@ -579,7 +579,7 @@ drink_items = [
             {"name": "Gold Rush Rita SM", "description": "Jose Cuervo Gold, orange liquer.", "price": "$6", "image": "gold_rush_SM.webp"},
             {"name": "Gold Rush Rita LG", "description": "Jose Cuervo Gold, orange liquer.", "price": "$11", "image": "gold_rush_LG.webp"},
             {"name": "Mango Tango SM", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$6", "image": "mango_tango_SM.webp"},
-            {"name": "Mango Tango LG", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$10", "image": "mango_tango_LG.webp"},
+            {"name": "Mango Tango LG", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$10", "image": "mango_tangoLG.webp"},
             {"name": "Beer Rita", "description": "Margarita and an ice-cold beer.", "price": "$10", "image": "beer_rita_.webp"},
             {"name": "La Granada", "description": "Jalapeno infused tequila, fresh lime, pomegranate, chili salt.", "price": "$10", "image": "la_grenada.webp"},
             {"name": "Skinny Summer", "description": "Altos Plata, agave, fresh lime", "price": "$9", "image": "skinny_summer.webp"},
@@ -594,7 +594,7 @@ drink_items = [
             {"name": "Uno Mas Mule", "description": "House infused jalapeno tequila, fresh lime, ginger beer", "price": "$10"},
             {"name": "Reposado Old Fashioned", "description": "Milagro Reposado, agave, chocolate bitters, Angostura.", "price": "$12"},
             {"name": "Tequila Berry Fizz", "description": "Altos Plata, mixed berry puree, fresh lime, ginger beer.", "price": "$11", "image": "tequila_berry_fizz_pretty.webp"},
-            {"name": "Fresh Mint Paloma", "description": "Patron Silver, fresh lime, mint, grapefruit, Topo Chico.", "price": "$11"},
+            {"name": "Fresh Mint Paloma", "description": "Patron Silver, fresh lime, mint, grapefruit, Topo Chico.", "price": "$11", "image": "mint_drink.webp"},
             {"name": "Cantaritos Michelada", "description": "Homemade michelada mix and an ice-cold beer of your choosing.", "price": "$5", "image": "cantaritos_michelada.webp"},
             {"name": "Sangria", "description": "Red sangria with fresh fruit or swirled into a frozen margarite", "price": "$8", "image": "sangria.webp"},
             {"name": "Mango Mama", "description": "Tito's Vodka, lime, fresh mango, ginger beer.", "price": "$9", "image": "mango_mama.webp"},
@@ -731,6 +731,21 @@ weekly_specials = {
     ]
 }
 
+vegetarian_items = [
+    {"name": "Veggie Fajitas", "description": "Sauteed vegetables on a bed of onions, Cenas rice, black beans, and sour cream. Also available for two."},
+    {"name": "Veggie Bowl", "description": "A large bowl filled with sauteed vegetables, black beans, Cenas rice, Queso Blanco, & grated cheese. Served with flour tortillas. Make it loaded by adding lettuce, sour cream, and guacamole."},
+    {"name": "Veggie Quesadilla", "description": "Sauteed vegetables, served with guacamole, sour cream, and jalapenos."},
+    {"name": "Spinach Quesadillas", "description": "Freshly sauteed spinach, guacamole, sour cream, and jalapenos."},
+    {"name": "Spinach Portobello", "description": "Sauteed spinach in poblano cream set atop a thick and meaty portobello mushroom. Served with sliced avocado."},
+    {"name": "Veggie Enchiladas", "description": "Freshly sauteed vegetables rolled in corn tortillas & smothered in your selection of sauces, sour cream & grated cheese."},
+    {"name": "Spinach Enchiladas", "description": "House made spinach mix rolled in corn tortillas & smothered in your selection of sauce, sour cream, & grated cheeses."},
+    {"name": "Veggie Tex Mex Tacos (3)", "description": "Soft flour tortillas filled with an assortment of delicious veggies - topped with fresh lettuce, grated cheeses, and roma tomatoes."},
+    {"name": "Veggie Los Cabos", "description": ""},
+    {"name": "Veggie Saurez", "description": "Cheese enchilada with poblano cream, black bean and cheese tostada, and veggie taco. Served with sour cream, & guacamole."},
+    {"name": "Veggie Wrap", "description": "Flour tortilla stuffed with sauteed vegetables, lettuce, Cenas rice, black beans, guacamole, sour cream, and pico de gallo. Served with queso."},
+    {"name": "Veggie Bur Con Queso", "description": "Large flour tortilla stuffed with sauteed vegetables, smothered with Queso Blanco, & grated cheese."}
+]
+
 
 @app.route('/')
 def home():
@@ -776,13 +791,21 @@ def menu():
 def menu_data():
     return jsonify(menu_items)
 
+@app.route('/veggie_menu_data')
+def vegetarian_menu_data():
+    return jsonify(vegetarian_items)
+
+@app.route('/vegetarian_menu')
+def vegetarian_menu():
+    return render_template("vegetarian_menu.html", vegetarian_items=vegetarian_items)
+
 @app.route('/gallery')
 def gallery():
     return render_template("gallery.html")
 
 @app.route('/drinks')
 def drinks():
-    return render_template("drinkmenu.html", drink_items=drink_items)
+    return render_template("drinkmenu.html", drink_items=drink_items, weekly_specials=weekly_specials)
 
 @app.route('/drink_data')
 def drink_data():
@@ -792,7 +815,9 @@ def drink_data():
 def orderlocation():
     return render_template("chooselocation.html", locations=locations)
 
-
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
 
 

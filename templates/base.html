@@ -24,11 +24,11 @@
 
   <div class="nav-links-base">
     <div class="dropdown-base">
-      <a href="{{ url_for('menu') }}" class="dropbtn-base">Menu</a>
+      <a href="#" class="dropbtn-base">Menu</a>
       <div class="dropdown-content-base">
         <a href="{{ url_for('menu') }}">Main Menu</a>
         <a href="{{ url_for('drinks') }}">Drink Menu</a>
-        <a href="#">Vegetarian Menu</a>
+        <a href="{{ url_for('vegetarian_menu') }}">Vegetarian Menu</a>
       </div>
     </div>
 
@@ -37,14 +37,15 @@
     </div>
 
     <div class="dropdown-base">
-      <a href="{{ url_for('about_us') }}" class="dropbtn-base">About</a>
+      <a href="#" class="dropbtn-base">About</a>
       <div class="dropdown-content-base">
+        <a href="{{url_for('about_us')}}">About Us</a>
         <a href="{{ url_for('about_us') }}#locations">Locations</a>
       </div>
     </div>
 
     <div class="dropdown-base">
-      <a href="{{ url_for('catering') }}" class="dropbtn-base">Catering</a>
+      <a href="#" class="dropbtn-base">Catering</a>
       <div class="dropdown-content-base">
         <a href="{{ url_for('catering') }}">Place Order</a>
         <a href="{{ url_for('catering') }}#catering-menu">Catering Menu</a>
@@ -53,7 +54,7 @@
     </div>
 
     <div class="dropdown-base">
-      <a href="{{ url_for('community') }}" class="dropbtn-base">Community</a>
+      <a href="#" class="dropbtn-base">Community</a>
       <div class="dropdown-content-base">
         <a href="{{ url_for('community') }}">Spirit Day</a>
         <a href="{{ url_for('donations') }}">Donations</a>
@@ -69,7 +70,7 @@
     </div>
 
     <div class="dropdown-base">
-      <a href="#" class="dropbtn-base">Login</a>
+      <a href="{{ url_for('login') }}" class="dropbtn-base">Login</a>
     </div>
   </div>
 </nav>
