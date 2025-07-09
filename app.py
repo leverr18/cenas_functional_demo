@@ -566,6 +566,26 @@ menu_items = [
                 ]
             }
         ]
+    },
+    {
+        "category": "Desserts",
+        "items": [
+            {
+                "name": "Sopapillas",
+                "description": "",
+                "image": "",
+            },
+            {
+                "name": "Churros",
+                "description": "",
+                "image": ""
+            },
+            {
+                "name": "Tres Leches",
+                "description": "",
+                "image": ""
+            }
+        ]
     }
 ]
 
