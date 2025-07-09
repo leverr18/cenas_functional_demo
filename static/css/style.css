@@ -1863,7 +1863,7 @@ button:hover {
   .mobile-nav-toggle {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 8px;
     right: 20px;
     z-index: 2100;
   }
@@ -1881,7 +1881,7 @@ button:hover {
 @media (max-width: 768px) {
   .nav-links-base {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     position: fixed;
     top: 0;
     right: 0;
@@ -1903,7 +1903,7 @@ button:hover {
   .mobile-nav-toggle-base {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 8px;
     right: 20px;
     z-index: 2100;
   }
