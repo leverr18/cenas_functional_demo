@@ -94,7 +94,7 @@ menu_items = [
                 ]
             },
             {"name": "Chicken Enchiladas (3)", "description": "Shredded chicken enchiladas with poblano.", "price": "13.89", "image": "chicken_enchilada.webp"},
-            {"name": "Pollo Feliz (3)", "description": "Each enchilada has a different sauce.", "price": "14.99", "image": "pollo_felix.webp"},
+            {"name": "Pollo Feliz (3)", "description": "Each enchilada has a different sauce.", "price": "14.99", "image": "pollo_feliz.webp"},
             {
                 "name": "Fajita Enchiladas (3)",
                 "description": "Beef or chicken fajita, pick sauce.",
@@ -122,7 +122,7 @@ menu_items = [
     {
         "category": "Soups & Salads",
         "items": [
-            {"name": "Mango & Shrimp Salad (8)", "description": "Shrimp with mango, veggies, queso.", "price": "17.49", "image": "shrimp_salad.webp"},
+            {"name": "Mango & Shrimp Salad (8)", "description": "Shrimp with mango, veggies, queso.", "price": "17.49", "image": "food2.webp"},
             {
                 "name": "Fajita Salad",
                 "description": "Lettuce, tomato, avocado, cheese, cucumber.",
@@ -573,17 +573,17 @@ menu_items = [
             {
                 "name": "Sopapillas",
                 "description": "",
-                "image": "",
+                "image": "sopapilla.webp",
             },
             {
                 "name": "Churros",
                 "description": "",
-                "image": ""
+                "image": "churros.webp"
             },
             {
                 "name": "Tres Leches",
                 "description": "",
-                "image": ""
+                "image": "tres_leches.webp"
             }
         ]
     }
