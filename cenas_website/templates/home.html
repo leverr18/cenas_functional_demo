@@ -20,56 +20,56 @@
     <div class="dropdown">
       <a href="#" class="dropbtn">Menu</a>
       <div class="dropdown-content">
-        <a href="{{ url_for('menu') }}">Main Menu</a>
-        <a href="{{ url_for('drinks') }}">Drink Menu</a>
-        <a href="{{ url_for('vegetarian_menu') }}">Vegetarian Menu</a>
+        <a href="{{ url_for('views.menu') }}">Main Menu</a>
+        <a href="{{ url_for('views.drinks') }}">Drink Menu</a>
+        <a href="{{ url_for('views.vegetarian_menu') }}">Vegetarian Menu</a>
       </div>
     </div>
 
     <div class="dropdown">
-      <a href="{{ url_for('orderlocation') }}" class="dropbtn">Order Now</a>
+      <a href="{{ url_for('views.orderlocation') }}" class="dropbtn">Order Now</a>
     </div>
 
     <!-- ABOUT dropdown -->
     <div class="dropdown">
       <a href="#" class="dropbtn">About</a>
       <div class="dropdown-content">
-        <a href="{{ url_for('about_us') }}">About Us</a>
-        <a href="{{ url_for('about_us') }}#locations">Locations</a>
+        <a href="{{ url_for('views.about_us') }}">About Us</a>
+        <a href="{{ url_for('views.about_us') }}#locations">Locations</a>
       </div>
     </div>
 
     <!-- CATERING dropdown -->
     <div class="dropdown">
-      <a href="{{ url_for('catering') }}" class="dropbtn">Catering</a>
+      <a href="{{ url_for('views.catering') }}" class="dropbtn">Catering</a>
       <div class="dropdown-content">
-        <a href="{{ url_for('catering') }}">Place Order</a>
-        <a href="{{ url_for('catering') }}#catering_menu">Catering Menu</a>
+        <a href="{{ url_for('views.catering') }}">Place Order</a>
+        <a href="{{ url_for('views.catering') }}#catering_menu">Catering Menu</a>
         <a href="#">Gallery</a>
       </div>
     </div>
 
     <!-- COMMUNITY dropdown -->
     <div class="dropdown">
-      <a href="{{ url_for('community') }}" class="dropbtn">Community</a>
+      <a href="{{ url_for('views.community') }}" class="dropbtn">Community</a>
       <div class="dropdown-content">
-        <a href="{{ url_for('community') }}">Spirit Day</a>
-        <a href="{{ url_for('donations') }}">Donations</a>
+        <a href="{{ url_for('views.community') }}">Spirit Day</a>
+        <a href="{{ url_for('views.donations') }}">Donations</a>
       </div>
     </div>
 
     <!-- CAREER dropdown -->
     <div class="dropdown">
-  <a href="{{ url_for('career') }}" class="dropbtn">Career</a>
+  <a href="{{ url_for('views.career') }}" class="dropbtn">Career</a>
 </div>
 
     <!-- CONTACT US -->
     <div class="dropdown">
-    <a href="{{ url_for('contact') }}" class="dropbtn">Contact Us</a>
+    <a href="{{ url_for('views.contact') }}" class="dropbtn">Contact Us</a>
     </div>
 
     <div class="dropdown">
-      <a href="{{ url_for('login') }}" class="dropbtn">Login</a>
+      <a href="{{ url_for('auth.login') }}" class="dropbtn">Login</a>
     </div>
   </div>
 </nav>
@@ -98,19 +98,19 @@
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-drinks.webp') }}" alt="Drinks">
     <h2>Drink Specials</h2>
-    <a href="{{ url_for('drinks') }}">View Drinks</a>
+    <a href="{{ url_for('views.drinks') }}">View Drinks</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-menu.webp') }}" alt="Menu">
     <h2>Menu</h2>
-    <a href="{{ url_for('menu') }}">View Menu</a>
+    <a href="{{ url_for('views.menu') }}">View Menu</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-order.webp') }}" alt="Order">
     <h2>Order Now</h2>
-    <a href="{{ url_for('orderlocation') }}">Order</a>
+    <a href="{{ url_for('views.orderlocation') }}">Order</a>
   </div>
 </section>
 
@@ -126,9 +126,9 @@
       Learn more how we can take your event in the Houston and Tomball area to the next level.
     </p>
     <div class="catering-buttons">
-    <a href="{{ url_for('catering') }}" class="btn btn-blue">Order Now</a>
-    <a href="{{ url_for('menu') }}" class="btn btn-red">View Specials</a>
-    <a href="{{ url_for('contact') }}" class="btn btn-brown">Contact Us</a>
+    <a href="{{ url_for('views.catering') }}" class="btn btn-blue">Order Now</a>
+    <a href="{{ url_for('views.menu') }}" class="btn btn-red">View Specials</a>
+    <a href="{{ url_for('views.contact') }}" class="btn btn-brown">Contact Us</a>
   </div>
 </div>
 </section>

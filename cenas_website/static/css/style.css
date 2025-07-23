@@ -1752,92 +1752,188 @@ body {
   background: #7f2323;
 }
 
-/* login */
-.login-container {
-  background: #fff8f4;
-  justify-content:center;
-  padding: 2rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 8rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Login Form Styling */
+
+.basesignup {
+  background-color: #fffdf9;
+  padding: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.base-content {
+  background: #f5f2ec;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   max-width: 400px;
   width: 100%;
+}
+
+.form h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.7rem;
+  color: #6b1414;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.login-container h2 {
-  margin-bottom: 1rem;
-  color: #8c2c2c;
-  font-size: 2rem;
-}
-
-.login-container p {
+hr.first {
+  border: none;
+  border-top: 2px solid #e0c5a1;
   margin-bottom: 2rem;
-  color: #5a2b2b;
-  font-size: 1rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.form h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.email, .password {
+  margin-bottom: 1.5rem;
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid #d8ccc0;
+  border-radius: 10px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: white;
 }
 
-button {
-  padding: 0.75rem;
-  background: #9b2b2b;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #6b1414;
+  outline: none;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 1.8rem;
+}
+
+input[type="submit"], .form button {
+  background-color: #6b1414;
+  color: white;
   font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #7f2323;
+input[type="submit"]:hover,
+.form button:hover {
+  background-color: #9b2b2b;
+}
+
+
+/* Sign Up Form Styling */
+
+.basesignup {
+  background-color: #fffdf9;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.base-content {
+  background: #f9f4ee;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 420px;
+  width: 100%;
+}
+
+.form h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #6b1414;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+hr.first {
+  border: none;
+  border-top: 2px solid #e0c5a1;
+  margin-bottom: 2rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.email, .name, .password {
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #6b1414;
+  outline: none;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+input[type="submit"], .form button {
+  background-color: #6b1414;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+.form button:hover {
+  background-color: #9b2b2b;
 }
 
 
 /* mobile styling (this is gonna be rough) */
 
 /* 🔷 MOBILE STYLES */
-@media (max-width: 480px) {
-  .login-container {
-    padding: 1rem;
-    border-radius: 12px;
-  }
 
-  .login-container h2 {
-    font-size: 1.6rem;
-  }
-
-  .login-container p {
-    font-size: 0.95rem;
-  }
-
-  input[type="text"],
-  input[type="password"] {
-    font-size: 0.95rem;
-    padding: 0.6rem;
-  }
-
-  button {
-    font-size: 0.95rem;
-    padding: 0.6rem;
-  }
-}
 /* Mobile nav toggle */
 .mobile-nav-toggle {
   display: none;
@@ -2507,5 +2603,15 @@ button:hover {
 
   .specials-banner h2 {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .base-content {
+    padding: 2rem 1rem;
+  }
+
+  .form h3 {
+    font-size: 1.5rem;
   }
 }
