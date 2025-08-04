@@ -76,3 +76,7 @@ def drink_data():
 @views.route('/orderlocation')
 def orderlocation():
     return render_template("chooselocation.html", locations=locations)
+
+@views.route('/shop')
+def shop():
+    return render_template('shop.html')

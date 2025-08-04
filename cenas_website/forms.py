@@ -8,6 +8,7 @@ class SignUpForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), length(min=2)])
     password1 = PasswordField('Enter your Password', validators=[DataRequired(), length(min=6)])
     password2 = PasswordField('Confirm your Password', validators=[DataRequired(), length(min=6)])
+    registration_code = StringField('Employee Registration Code', validators=[DataRequired()])
     submit = SubmitField('Sign Up')
 
 class LoginForm(FlaskForm):
@@ -23,7 +24,6 @@ class PasswordChangeForm(FlaskForm):
 
 class ShopItemsForm(FlaskForm):
     product_name = StringField('Name of Product', validators=[DataRequired()])
-    current_price = FloatField('Current Price', validators=[DataRequired()])
     in_stock = IntegerField('In Stock', validators=[DataRequired(), NumberRange(min=0)])
     product_picture = FileField('Product Picture', validators=[FileRequired()])
     add_product = SubmitField('Add Product')

@@ -2,6 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+ALLOWED_CODE = '817043'
+
 db = SQLAlchemy()
 DB_NAME = 'database.sqlite3'
 

@@ -1929,6 +1929,69 @@ input[type="submit"]:hover,
   background-color: #9b2b2b;
 }
 
+.page-content-wrapper {
+  max-width: 900px;
+  margin: 90px auto 40px auto;  /* pushes below navbar + centers */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* flash messages */
+.flash-container {
+  margin: 10px auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.flash {
+  position: relative;
+  padding: 15px 45px 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  animation: fadeIn 0.5s ease;
+}
+
+.flash-success {
+  background-color: #4CAF50;
+}
+
+.flash-danger {
+  background-color: #e53935;
+}
+
+.flash-warning {
+  background-color: #f9a825;
+  color: #000;
+}
+
+.flash-info {
+  background-color: #2196F3;
+}
+
+.flash-close {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 /* mobile styling (this is gonna be rough) */
 
