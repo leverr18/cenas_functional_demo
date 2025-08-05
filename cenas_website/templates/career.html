@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Career - Cenas Kitchen{% endblock %}
+
+{% block content %}
+  <section class="career-section">
+    <div class="career-wrapper">
+      <div class="career-info-box">
+        <h2>Apply Now!</h2>
+        <p>Join our team at Cenas Kitchen, where we treat staff like family and bring passion to every plate. It’s more than just a job—it’s a chance to grow in a supportive, fun, and flavorful environment.</p>
+      </div>
+      <div class="career-form-box">
+        <form action="https://formspree.io/f/xgvyjeqo" method="POST" class="formspree-form">
+          <h2>Job Application</h2>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="text" name="address" placeholder="Address" required>
+          <input type="date" name="birth_date" placeholder="Birth Date" required>
+          <textarea name="experience" placeholder="Tell us about your experience" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+

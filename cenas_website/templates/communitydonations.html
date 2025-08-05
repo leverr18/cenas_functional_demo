@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Donations - Cenas Kitchen{% endblock %}
+
+{% block content %}
+  <section class="donation-hero">
+    <div class="donation-wrapper">
+      <div class="donation-info-box">
+        <h2>DONATION REQUEST GUIDELINES</h2>
+        <p>Thank you for considering us as a potential contributor to your organization. We are proud to support initiatives that uplift our community through education, charity, and local events. In order to fairly evaluate requests, we kindly ask that you complete the donation request form below. Please note the following guidelines:</p>
+      
+        <div class="donation-steps-box">
+          <h3>Donation Requests</h3>
+          <div class="donation-step">
+            <h4>ELIGIBILITY</h4>
+            <p>We prioritize donations to registered non-profit organizations, schools, and charitable events. Proof of your organization's non-profit status may be required.</p>
+          </div>
+          <div class="donation-step">
+            <h4>SUBMISSION</h4>
+            <p>All requests must be submitted at least 30 days prior to the date of the event. We are unable to accommodate last-minute requests.</p>
+          </div>
+          <div class="donation-step">
+            <h4>SCOPE</h4>
+            <p>While we wish we could support every request, donations will be granted based on the alignment of your cause with our mission and the availability of resources.</p>
+          </div>
+          <div class="donation-step">
+            <h4>RESPONSE TIME</h4>
+            <p>Due to the volume of requests, please allow up to two weeks for a response. Submission of a request does not guarantee approval.</p>
+          </div>
+          <p>We greatly appreciate the work you do for our community, and we look forward to reviewing your application. If you have any questions, feel free to contact us.</p>
+        </div>
+      </div>
+
+      <div class="community-form-box">
+        <form action="https://formspree.io/f/movwoqbv" method="POST" class="formspree-form">
+          <h2>Donation Request</h2>
+
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" required>
+
+          <label for="phone">Phone Number</label>
+          <input type="text" name="phone" id="phone" required>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+
+          <label for="zipcode">Zip Code</label>
+          <input type="text" name="zipcode" id="zipcode" required>
+
+          <label for="organization">Organization Name</label>
+          <input type="text" name="organization" id="organization" required>
+
+          <label for="position">Your Position at Organization</label>
+          <input type="text" name="position" id="position" required>
+
+          <label for="education">Education</label>
+          <input type="text" name="education" id="education">
+
+          <label for="website">Website (if available)</label>
+          <input type="url" name="website" id="website">
+
+          <label for="tax_id">Tax ID</label>
+          <input type="text" name="tax_id" id="tax_id" required>
+
+          <label for="preferred_location">Preferred Cenas Location</label>
+          <select name="preferred_location" id="preferred_location" required>
+            <option value="" disabled selected>Select Location</option>
+            <option value="Houston">Houston</option>
+            <option value="Tomball">Tomball</option>
+          </select>
+
+          <label for="has_previous_donation">Has Cenas provided your organization a donation before?</label>
+          <select name="has_previous_donation" id="has_previous_donation" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          <label for="what_requesting">What are you requesting?</label>
+          <input type="text" name="what_requesting" id="what_requesting" required>
+
+          <label for="event_type">Type of Event</label>
+          <input type="text" name="event_type" id="event_type" required>
+
+          <label for="why_support">Why should we support your event?</label>
+          <textarea name="why_support" id="why_support" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
