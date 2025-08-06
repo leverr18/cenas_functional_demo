@@ -3,89 +3,76 @@
 
 {% block content %}
 
-<section class="menu-header">
-  <h1>Our Menu</h1>
-  <p>Filter by category and explore our favorites</p>
+<div class="menu-page">
+  <section class="menu-header">
+    <h1>Our Menu</h1>
+    <p>Filter by category and explore our favorites!</p>
+  </section>
 
-  <!-- Filter Navigation -->
-  <div class="filters">
-    <button class="filter-btn" data-filter="specials">Specials</button>
+  <section class="accordion-menu">
     {% for category in menu_items %}
-      <button class="filter-btn{% if loop.first %} active{% endif %}" data-filter="{{ category.category | lower | replace(' ', '-') }}">
-        {{ category.category }}
-      </button>
-    {% endfor %}
-  </div>
-</section>
+      <div class="menu-category">
+        <button class="accordion-btn" data-target="section-{{ loop.index }}">
+          {{ category.category }}
+        </button>
 
-<section class="specials-banner" style="display:none;">
-  <h2>Weekly Specials</h2>
-  <div class="specials-list">
-    {% for day, items in weekly_specials.items() %}
-      <div class="specials-day">
-        <h3>{{ day }}</h3>
-        <ul>
-          {% for item in items %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="menu-grid">
-  {% for category in menu_items %}
-    {% for item in category["items"] %}
-      <div class="menu-card" data-category="{{ category.category | lower | replace(' ', '-') }}">
-        {% if item.image %}
-          <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
-        {% endif %}
-        <div class="menu-info">
-          <h3>{{ item.name }}</h3>
-          {% if item.price %}
-            <span class="price">${{ item.price }}</span>
-          {% endif %}
-          {% if item.description %}
-            <p>{{ item.description }}</p>
-          {% endif %}
-          {% if item.options %}
-            {% for option in item.options %}
-              {% if option.variants %}
-                <div class="combo-group">
-                  <p class="combo-title">{{ option.type }}</p>
-                  <div class="item-options-table">
-                    {% for v in option.variants %}
-                      <div class="option-row">
-                        <span class="option-type">{{ v.type }}</span>
-                        {% if v.price is defined %}
-                          <span class="option-price">${{ "%.2f"|format(v.price|float) }}</span>
-                        {% endif %}
-                      </div>
-                    {% endfor %}
-                  </div>
-                </div>
-              {% else %}
-                <div class="item-options-table">
-                  <div class="option-row">
-                    <span class="option-type">{{ option.type }}</span>
-                    {% if option.price is defined %}
-                      <span class="option-price">${{ "%.2f"|format(option.price|float) }}</span>
-                    {% endif %}
-                  </div>
-                </div>
+        <div class="accordion-panel" id="section-{{ loop.index }}">
+          {% for item in category["items"] %}
+            <div class="menu-card">
+              {% if item.image %}
+                <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
               {% endif %}
-            {% endfor %}
-          {% endif %}
+              <div class="menu-info">
+                <h3>{{ item.name }}</h3>
+                
+                {% if item.price %}
+                  <span class="price">${{ item.price }}</span>
+                {% endif %}
+                
+                {% if item.description %}
+                  <p>{{ item.description }}</p>
+                {% endif %}
+
+                {% if item.options %}
+                  <ul class="menu-options">
+                    {% for option in item.options %}
+                      {% if option.variants %}
+                        <li>
+                          <strong>{{ option.type }}</strong>:
+                          <ul>
+                            {% for variant in option.variants %}
+                              <li>{{ variant.type }} — ${{ variant.price }}</li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                      {% elif option.variant %}
+                        <li>
+                          <strong>{{ option.type }}</strong>:
+                          <ul>
+                            {% for variant in option.variant %}
+                              <li>{{ variant.type }} — ${{ variant.price }}</li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                      {% else %}
+                        <li>{{ option.type }} — ${{ option.price }}</li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
-  {% endfor %}
-</section>
+  </section>
+</div>
 
 <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 
 {% endblock %}
+
 
 
 

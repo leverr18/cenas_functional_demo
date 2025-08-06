@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cenas Kitchen Demo</title>
+  <title>Cenas Kitchen</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
  <nav class="navbar">
   <div class="nav-left">
-    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo" class="nav-logo">
+    <img src="{{ url_for('static', filename='images/final_logo.png') }}" alt="Logo" class="nav-logo">
   </div>
 
   <button class="mobile-nav-toggle">&#x22EE;</button> <!-- 3 vertical dots -->
@@ -40,11 +40,11 @@
     </div>
 
     <!-- CATERING dropdown -->
-    <div class="dropdown">
-      <a href="{{ url_for('views.catering') }}" class="dropbtn">Catering</a>
-      <div class="dropdown-content">
+    <div class="dropdown-base">
+      <a href="#" class="dropbtn-base">Catering</a>
+      <div class="dropdown-content-base">
         <a href="{{ url_for('views.catering') }}">Place Order</a>
-        <a href="{{ url_for('views.catering') }}#catering_menu">Catering Menu</a>
+        <a href="{{ url_for('views.catering') }}#catering-menu">Catering Menu</a>
         <a href="#">Gallery</a>
       </div>
     </div>
@@ -84,9 +84,7 @@
   </div>
 
   <div class="hero-overlay">
-    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Cenas Kitchen Logo" class="logo" />
-    <h1>Cenas Kitchen</h1>
-    <p class="subheading">Authentic Tex-Mex, Made with Love</p>
+    <img src="{{ url_for('static', filename='images/final_logo.png') }}" alt="Cenas Kitchen Logo" class="logo" />
   </div>
 
   <button class="carousel-btn prev">&#10094;</button>
@@ -97,23 +95,19 @@
 <section class="options-section">
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-drinks.webp') }}" alt="Drinks">
-    <h2>Drink Specials</h2>
-    <a href="{{ url_for('views.drinks') }}">View Drinks</a>
+    <a href="{{ url_for('views.drinks') }}" class="img-button">View Drinks</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-menu.webp') }}" alt="Menu">
-    <h2>Menu</h2>
-    <a href="{{ url_for('views.menu') }}">View Menu</a>
+    <a href="{{ url_for('views.menu') }}" class="img-button">View Menu</a>
   </div>
 
   <div class="option">
     <img src="{{ url_for('static', filename='images/your-order.webp') }}" alt="Order">
-    <h2>Order Now</h2>
-    <a href="{{ url_for('views.orderlocation') }}">Order</a>
+    <a href="{{ url_for('views.orderlocation') }}" class="img-button">Order</a>
   </div>
 </section>
-
 
   <section class="catering-section">
   <div class="catering-image">

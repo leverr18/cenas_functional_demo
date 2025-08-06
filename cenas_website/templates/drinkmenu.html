@@ -2,61 +2,44 @@
 {% block title %}Drinks - Cenas Kitchen{% endblock %}
 
 {% block content %}
+<div class="drink-menu-page">
+  <section class="drink-menu-header">
+    <h1>Drink Menu</h1>
+    <p>Filter by category and explore our handcrafted drinks</p>
+  </section>
 
-<div class="drinks-page">
-<section class="menu-header">
-  <h1>Drink Menu</h1>
-  <p>Filter by category and explore our handcrafted drinks</p>
-
-    <div class="filters">
-      {% for category in drink_items %}
-        <button class="filter-btn{% if loop.first %} active{% endif %}" data-filter="{{ category.category | lower | replace(' ', '-') }}">
+  <section class="drink-accordion-menu">
+    {% for category in drink_items %}
+      <div class="drink-menu-category">
+        <button class="drink-accordion-btn" data-target="section-{{ loop.index }}">
           {{ category.category }}
         </button>
-      {% endfor %}
-    </div>
-  </section>
 
-<section class="specials-banner" style="display:none;">
-  <h2>Weekly Specials</h2>
-  <div class="specials-list">
-    {% for day, items in weekly_specials.items() %}
-      <div class="specials-day">
-        <h3>{{ day }}</h3>
-        <ul>
-          {% for item in items %}
-            <li>{{ item }}</li>
+        <div class="drink-accordion-panel" id="section-{{ loop.index }}">
+          {% for item in category["items"] %}
+            <div class="drink-menu-card">
+              {% if item.image %}
+                <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
+              {% endif %}
+              <div class="drink-menu-info">
+                <h3>{{ item.name }}</h3>
+                {% if item.price %}
+                  <span class="drink-price">{{ item.price }}</span>
+                {% endif %}
+                {% if item.description %}
+                  <p>{{ item.description }}</p>
+                {% endif %}
+              </div>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
     {% endfor %}
-  </div>
-</section>
-
-  <section class="menu-grid">
-    {% for category in drink_items %}
-      {% for item in category["items"] %}
-        <div class="menu-card" data-category="{{ category.category | lower | replace(' ', '-') }}">
-          {% if item.image %}
-            <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
-          {% endif %}
-          <div class="menu-info">
-            <h3>{{ item.name }}</h3>
-            {% if item.price %}
-              <span class="price">{{ item.price }}</span>
-            {% endif %}
-            {% if item.description %}
-              <p>{{ item.description }}</p>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    {% endfor %}
   </section>
-</section>
 </div>
-<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 
+<script src="{{ url_for('static', filename='js/drink.js') }}"></script>
 {% endblock %}
+
 
 
