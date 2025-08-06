@@ -13,6 +13,13 @@ locations = [
         "lng": -95.644264,
         "order_url": "https://order.toasttab.com/online/aguirres-tex-mex-1-copperfield-6166-hwy-6-north-unit-22"
     },
+    {
+        "name": "Cenas Fajitas - Houston",
+        "address": "3733 Westheimer Rd #3046, Houston, TX 77027",
+        "lat": 29.741303,
+        "lng": -95.439634,
+        "email": "Fajitas@cenaskitchen.com"
+    }
 ]
 
 menu_items = [
