@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 ALLOWED_CODE = '7966'
 
@@ -14,7 +14,7 @@ def create_database():
 
 def create_app():
     # load .env values (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, FROM_EMAIL, MANAGER_EMAIL, etc.)
-    load_dotenv()
+    # load_dotenv()
 
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hfasl'  # consider moving to env
