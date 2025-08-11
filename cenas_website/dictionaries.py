@@ -84,31 +84,29 @@ menu_items = [
         "category": "Enchiladas",
         "items": [
             {"name": "Cenaladas (4)", "description": "Cheese, beef, chicken enchiladas + tamale.", "price": "13.99", "image": "cenalada.webp"},
-            {"name": "Veggie Enchiladas (3)", "description": "Grilled veggie enchiladas with sauce.", "price": "12.79", "image": "veggie_enchilada.webp"},
-            {"name": "Spinach Enchiladas (3)", "description": "Spinach mix enchiladas.", "price": "12.59", "image": "spinach_enchilada.webp"},
+            {"name": "Veggie Enchiladas (3)", "description": "Grilled veggie enchiladas with sauce.", "price": "12.79"},
+            {"name": "Spinach Enchiladas (3)", "description": "Spinach mix enchiladas.", "price": "12.59"},
             {"name": "Tamales Dinner (3)", "description": "Pork tamales with chili con carne.", "price": "13.89", "image": "tamale_dinner.webp"},
             {
                 "name": "Cheese or Ground Beef Enchiladas (3)",
                 "description": "Chili con carne, sour cream & grated cheese.",
-                "image": "cheese_beef_enchilada.webp",
                 "options": [
                     {"type": "Cheese", "price": 11.79},
                     {"type": "Beef", "price": 12.89}
                 ]
             },
-            {"name": "Chicken Enchiladas (3)", "description": "Shredded chicken enchiladas with poblano.", "price": "13.89", "image": "chicken_enchilada.webp"},
-            {"name": "Pollo Feliz (3)", "description": "Each enchilada has a different sauce.", "price": "14.99", "image": "pollo_feliz.webp"},
+            {"name": "Chicken Enchiladas (3)", "description": "Shredded chicken enchiladas with poblano.", "price": "13.89"},
+            {"name": "Pollo Feliz (3)", "description": "Each enchilada has a different sauce.", "price": "14.99"},
             {
                 "name": "Fajita Enchiladas (3)",
                 "description": "Beef or chicken fajita, pick sauce.",
-                "image": "fajita_enchilada.webp",
                 "options": [
                     {"type": "Chicken Fajita", "price": 14.79},
                     {"type": "Beef Fajita", "price": 16.39}
                 ]
             },
-            {"name": "Seafood Enchiladas (3)", "description": "Shrimp & crawfish enchiladas.", "price": "15.89", "image": "seafood_enchilada.webp"},
-            {"name": "Pork Enchiladas (3)", "description": "Pork & poblano cream.", "price": "12.99", "image": "pork_enchilada.webp"}
+            {"name": "Seafood Enchiladas (3)", "description": "Shrimp & crawfish enchiladas.", "price": "15.89"},
+            {"name": "Pork Enchiladas (3)", "description": "Pork & poblano cream.", "price": "12.99"}
         ]
     },
     {
@@ -180,7 +178,6 @@ menu_items = [
             {
                 "name": "Fajitas",
                 "description": "Served with guacamole, sour cream, pico de gallo, flour tortillas, Cenas rice & choice of beans.",
-                "image": "fajitas.webp",
                 "options": [
                     {
                         "type": "Chicken",
@@ -215,7 +212,6 @@ menu_items = [
             {
                 "name": "Plato Mazatlan",
                 "description": "Fajitas, bacon-wrapped shrimp, ribs, and sausage.",
-                "image": "plato_mazatlan.webp",
                 "options": [
                     {
                         "type": "Chicken",
@@ -243,7 +239,6 @@ menu_items = [
             {
                 "name": "Plato Cancun",
                 "description": "Fajitas and jumbo bacon-wrapped shrimp.",
-                "image": "plato_cancun.webp",
                 "options": [
                     {
                         "type": "Chicken",
@@ -271,7 +266,6 @@ menu_items = [
             {
                 "name": "Fajitas Del Mar",
                 "description": "Fajitas with seafood sauce and jumbo shrimp.",
-                "image": "fajita_del_mar.webp",
                 "options": [
                     {
                         "type": "Chicken",
@@ -296,12 +290,11 @@ menu_items = [
                     }
                 ]
             },
-            {"name": "Shrimp Brochette (8)", "description": "Bacon-wrapped shrimp with peppers and cheese.", "price": "24.99", "image": "shrimp_brochette.jpg"},
-            {"name": "Shrimp Fajitas (8)", "description": "Grilled jumbo shrimp with sautéed veggies.", "price": "21.99", "image": "shrimp_fajita.jpg"},
+            {"name": "Shrimp Brochette (8)", "description": "Bacon-wrapped shrimp with peppers and cheese.", "price": "24.99"},
+            {"name": "Shrimp Fajitas (8)", "description": "Grilled jumbo shrimp with sautéed veggies.", "price": "21.99"},
             {
                 "name": "El Jefe's Ribs",
                 "description": "BBQ baby back ribs, coleslaw, and fries.",
-                "image": "el_jefe.webp",
                 "options": [
                     {"type": "Half Rack", "price": "19.99"},
                     {"type": "Full Rack", "price": "32.99"}
@@ -312,33 +305,31 @@ menu_items = [
     {
         "category": "Fan Favorites",
         "items": [
-            {"name": "Pollo Del Mar", "description": "Shrimp & crawfish over grilled chicken.", "price": "16.79", "image": "pollo_del_mar.webp"},
-            {"name": "Chipotle Chicken", "description": "Chicken with mushrooms, spinach, sausage, chipotle cream.", "price": "16.79", "image": "chipotle_chicken.webp"},
+            {"name": "Pollo Del Mar", "description": "Shrimp & crawfish over grilled chicken.", "price": "16.79"},
+            {"name": "Chipotle Chicken", "description": "Chicken with mushrooms, spinach, sausage, chipotle cream.", "price": "16.79"},
             {"name": "Pollo Poblano", "description": "Chicken with vegetables & creamy poblano.", "price": "16.49", "image": "food3.webp"},
             {"name": "Pollo Con Mango", "description": "Chicken with mango pico and queso blanco.", "price": "15.99", "image": "pollo_con_mango.webp"},
             {
                 "name": "Fajita Bowl",
                 "description": "Fajita meat, beans, rice, queso & cheese.",
-                "image": "fajita_bowl.webp",
                 "options": [
                     {"type": "Chicken", "price": "13.19"},
                     {"type": "Beef", "price": "15.59"},
                     {"type": "Combo", "price": "14.59"}
                 ]
             },
-            {"name": "Steak Tampiquena", "description": "Skirt steak with enchilada & salad mix.", "price": "18.99", "image": "steak_tampiquena.webp"},
-            {"name": "Chile Rellano", "description": "Stuffed poblano pepper with chicken, cheese, and sauces.", "price": "14.29", "image": "chile_rellano.webp"}
+            {"name": "Steak Tampiquena", "description": "Skirt steak with enchilada & salad mix.", "price": "18.99"},
+            {"name": "Chile Rellano", "description": "Stuffed poblano pepper with chicken, cheese, and sauces.", "price": "14.29"}
         ]
     },
     {
         "category": "Seafood",
         "items": [
-            {"name": "Fish El Rey", "description": "Tilapia with shrimp, crawfish, queso fresco, mango pico.", "price": "16.99", "image": "fish_el_ray.webp"},
-            {"name": "Seafood Bowl", "description": "Shrimp & crawfish bowl with rice & cheese.", "price": "13.19", "image": "seafood_bowl.webp"},
+            {"name": "Fish El Rey", "description": "Tilapia with shrimp, crawfish, queso fresco, mango pico.", "price": "16.99"},
+            {"name": "Seafood Bowl", "description": "Shrimp & crawfish bowl with rice & cheese.", "price": "13.19"},
             {
                 "name": "Chipotle Portobello",
                 "description": "Stuffed mushroom with shrimp or spinach.",
-                "image": "chipotle_portobello.webp",
                 "options": [
                     {"type": "Spinach", "price": "13.93"},
                     {"type": "Shrimp", "price": "15.29"},
@@ -350,11 +341,10 @@ menu_items = [
     {
         "category": "Tacos, Tostadas & More",
         "items": [
-            {"name": "Chicken Flautas (4)", "description": "Crispy flautas with guac, sour cream, queso blanco.", "price": "13.29", "image": "chicken_flautas.webp"},
+            {"name": "Chicken Flautas (4)", "description": "Crispy flautas with guac, sour cream, queso blanco.", "price": "13.29"},
             {
                 "name": "Tacos Al Carbon (2)",
                 "description": "Flour tortillas with fajitas, guac, queso, pico.",
-                "image": "tacos_al_carbon.webp",
                 "options": [
                     {"type": "Chicken Fajita", "price": "14.69"},
                     {"type": "Beef Fajita", "price": "16.99"},
@@ -365,7 +355,6 @@ menu_items = [
             {
                 "name": "Tex-Mex Tacos (3) (Crispy or Soft)",
                 "description": "Tacos with lettuce, tomato, cheese.",
-                "image": "texmex_tacos.webp",
                 "options": [
                     {"type": "Chicken Fajita", "price": "14.49"},
                     {"type": "Beef Fajita", "price": "16.49"},
@@ -373,11 +362,10 @@ menu_items = [
                     {"type": "Grilled Veggies", "price": "13.89"}
                 ]
             },
-            {"name": "Pork Tacos (5)", "description": "Shredded pork tacos with habanero onions.", "price": "12.98", "image": "pork_taco.webp"},
+            {"name": "Pork Tacos (5)", "description": "Shredded pork tacos with habanero onions.", "price": "12.98"},
             {
                 "name": "Street Tacos (5)",
                 "description": "Fajita meat tacos with taco sauce & grilled jalapeño.",
-                "image": "street_taco.webp",
                 "options": [
                     {"type": "Chicken Fajita", "price": "13.69"},
                     {"type": "Beef Fajita", "price": "15.89"},
@@ -385,12 +373,11 @@ menu_items = [
                     {"type": "Add a Taco", "price": "3.50"}
                 ]
             },
-            {"name": "Fish Tacos (2)", "description": "Tilapia, chipotle, mango, cabbage, queso.", "price": "16.99", "image": "fish_taco.webp"},
-            {"name": "Shrimp Tacos (2)", "description": "Shrimp, chipotle, mango, cabbage, queso.", "price": "16.99", "image": "shrimp_taco.webp"},
+            {"name": "Fish Tacos (2)", "description": "Tilapia, chipotle, mango, cabbage, queso.", "price": "16.99"},
+            {"name": "Shrimp Tacos (2)", "description": "Shrimp, chipotle, mango, cabbage, queso.", "price": "16.99"},
             {
                 "name": "Tostada Dinner (2)",
                 "description": "Tostadas with beans, lettuce, cheese, tomato.",
-                "image": "tostada_dinner.webp",
                 "price": "11.89",
                 "options": [
                     {"type": "Ground Beef or Shredded Chicken", "price": "12.89"},
@@ -409,61 +396,51 @@ menu_items = [
             {
                 "name": "El Tex-Mex",
                 "description": "Crispy beef taco, queso chip, bean tostada, two cheese enchiladas with savory gravy.",
-                "image": "el_texmex.webp",
                 "price": "12.99"
             },
             {
                 "name": "Plato Guzman",
                 "description": "Ground beef enchilada, chicken enchilada, crispy beef taco, crispy chicken taco.",
-                "image": "plato_guzman.webp",
                 "price": "13.89"
             },
             {
                 "name": "Plato Salinas",
                 "description": "Chicken enchilada with tomatillo sauce, chicken flauta, chicken fajita nachos, pico, sour cream, guac, queso.",
-                "image": "plato_salinas.webp",
                 "price": "14.89"
             },
             {
                 "name": "Plato Vaquero",
                 "description": "Beef fajita taco al carbon, cheese enchilada, ground beef enchilada with gravy, pork tamale, queso, sour cream, guacamole.",
-                "image": "plato_vaquero.webp",
                 "price": "14.89"
             },
             {
                 "name": "Plato Suarez",
                 "description": "Cheese enchilada, bean & cheese tostada, crispy ground beef taco, sour cream, guacamole.",
-                "image": "plato_saurez.webp",
                 "price": "13.39"
             },
             {
                 "name": "Combo Special",
                 "description": "Beef taco, bean tostada, queso chip, served with pico, guacamole, sour cream (no rice & beans).",
-                "image": "combo_special.webp",
                 "price": "11.89"
             },
             {
                 "name": "Laredo Combo",
                 "description": "Chicken quesadillas and beef fajita flour tortilla with queso blanco, pico, sour cream, guacamole.",
-                "image": "laredo_combo.webp",
                 "price": "14.49"
             },
             {
                 "name": "Pollo Capmero",
                 "description": "Chicken enchilada with poblano cream, flauta, chicken fajita tortilla, queso, sour cream, guac, pico.",
-                "image": "pollo_capmero.webp",
                 "price": "13.99"
             },
             {
                 "name": "Veggie Los Cabos",
                 "description": "Stuffed bell pepper and cheese enchilada with poblano cream, avocado, and pico de gallo.",
-                "image": "veggie_los_cabos.webp",
                 "price": "13.89"
             },
             {
                 "name": "Veggie Suarez",
                 "description": "Cheese enchilada with poblano cream, black bean & cheese tostada, veggie taco with sour cream & guacamole.",
-                "image": "veggie_saurez.webp",
                 "price": "13.49"
             }
         ]
@@ -474,7 +451,6 @@ menu_items = [
             {
                 "name": "Burrito Con Queso",
                 "description": "Tortilla with beef, chicken, or pork, queso blanco, grated cheese.",
-                "image": "burrito_con_queso.webp",
                 "price": "13.99",
                 "options": [
                     {"type": "Chicken Fajita", "price": "add 3"},
@@ -486,7 +462,6 @@ menu_items = [
             {
                 "name": "Tiago Burrito",
                 "description": "Stuffed with meat, beans, queso blanco, chili gravy, cheese.",
-                "image": "tiago_burrito.webp",
                 "price": "13.89",
                 "options": [
                     {"type": "Chicken Fajita", "price": "add 3"},
@@ -498,7 +473,6 @@ menu_items = [
             {
                 "name": "Chimi & Changa",
                 "description": "Fried burrito with cheese, lettuce, tomato, queso fresco, sour cream, guac, queso blanco.",
-                "image": "chimi_changa.webp",
                 "price": "14.99",
                 "options": [
                     {"type": "Chicken Fajita", "price": "add 3"},
@@ -509,7 +483,6 @@ menu_items = [
             {
                 "name": "Mexican Wrap",
                 "description": "Tortilla with meat, lettuce, rice, beans, guac, sour cream, pico, served with queso & taco sauce.",
-                "image": "mexican_wrap.webp",
                 "price": "14.99",
                 "options": [
                     {"type": "Chicken Fajita", "price": "add 3"},
@@ -520,7 +493,6 @@ menu_items = [
             {
                 "name": "Seafood Burrito",
                 "description": "Stuffed with shrimp & crawfish, topped with white wine seafood sauce.",
-                "image": "seafood_burrito.webp",
                 "price": "14.89",
                 "options": [
                     {"type": "Sour Cream, Guacamole & Lettuce Inside", "price": "1.49"}
@@ -534,7 +506,6 @@ menu_items = [
             {
                 "name": "Tejano Burger",
                 "description": "Sirloin burger on sourdough bun with fries & chipotle mayo.",
-                "image": "tejano_burger.webp",
                 "options": [
                     {
                         "type": "Regular - Lettuce, grilled onions",
@@ -562,7 +533,6 @@ menu_items = [
             {
                 "name": "Avocado Burger",
                 "description": "Avocado, Monterey cheese, lettuce, tomatoes, grilled onions.",
-                "image": "avocado_burger.webp",
                 "options": [
                     {"type": "Half Pound", "price": 15.99},
                     {"type": "One Pound", "price": 20.99}
@@ -586,7 +556,7 @@ menu_items = [
             {
                 "name": "Tres Leches",
                 "description": "",
-                "image": "tres_leches.webp"
+                "image": "food4.webp"
             }
         ]
     }
@@ -603,7 +573,7 @@ drink_items = [
             {"name": "Gold Rush Rita LG", "description": "Jose Cuervo Gold, orange liquer.", "price": "$11", "image": "gold_rush_LG.webp"},
             {"name": "Mango Tango SM", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$6", "image": "mango_tango_SM.webp"},
             {"name": "Mango Tango LG", "description": "Mango puree, Chamoy, chili salt, served frozen.", "price": "$10", "image": "mango_tangoLG.webp"},
-            {"name": "Beer Rita", "description": "Margarita and an ice-cold beer.", "price": "$10", "image": "beer_rita_.webp"},
+            {"name": "Beer Rita", "description": "Margarita and an ice-cold beer.", "price": "$10", "image": "beer_rita.webp"},
             {"name": "La Granada", "description": "Jalapeno infused tequila, fresh lime, pomegranate, chili salt.", "price": "$10", "image": "la_grenada.webp"},
             {"name": "Skinny Summer", "description": "Altos Plata, agave, fresh lime", "price": "$9", "image": "skinny_summer.webp"},
             {"name": "Mezcalita", "description": "Mezcal, Grand Marnier, pineapple, jalapeno", "price": "$12", "image": "mezcalita.webp"},
@@ -613,7 +583,7 @@ drink_items = [
     {
         "category": "Hand Shaken Cocktails",
         "items": [
-            {"name": "Watermelon Ranchwater", "description": "1800 Silver, fresh watermelon, lime, Topo Chico. Non-Alcoholic also Available.", "price": "$11", "image": "watermelon_ranchwater.webp"},
+            {"name": "Watermelon Ranchwater", "description": "1800 Silver, fresh watermelon, lime, Topo Chico. Non-Alcoholic also Available.", "price": "$11"},
             {"name": "Uno Mas Mule", "description": "House infused jalapeno tequila, fresh lime, ginger beer", "price": "$10"},
             {"name": "Reposado Old Fashioned", "description": "Milagro Reposado, agave, chocolate bitters, Angostura.", "price": "$12"},
             {"name": "Tequila Berry Fizz", "description": "Altos Plata, mixed berry puree, fresh lime, ginger beer.", "price": "$11", "image": "tequila_berry_fizz_pretty.webp"},

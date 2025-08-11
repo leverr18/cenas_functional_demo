@@ -16,7 +16,7 @@
 <nav class="navbar-base">
   <div class="nav-left-base">
     <a href="{{ url_for('views.home') }}">
-      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo" class="nav-logo">
+      <img src="{{ url_for('static', filename='images/final_logo.png') }}" alt="Logo" class="nav-logo">
     </a>
   </div>
 
@@ -70,9 +70,32 @@
     </div>
 
     <div class="dropdown-base">
-      <a href="{{ url_for('auth.login') }}" class="dropbtn-base">Login</a>
+      <a href="{{ url_for('cart.view_cart') }}" class="dropbtn-base">Cart</a>
     </div>
+
+{% if current_user.is_authenticated %}
+  <!-- Logout link -->
+  <div class="dropdown-base">
+    <a href="{{ url_for('auth.log_out') }}" class="dropbtn-base">Logout</a>
   </div>
+
+  {% if current_user.id == 1 %}
+    <!-- Admin menu -->
+    <div class="dropdown-base">
+      <a href="#" class="dropbtn-base">Admin</a>
+      <div class="dropdown-content-base">
+        <a href="{{ url_for('admin.add_items') }}">Add Product</a>
+        <a href="{{ url_for('admin.shop_items') }}">Manage Products</a>
+      </div>
+    </div>
+  {% endif %}
+{% else %}
+  <!-- Login link -->
+  <div class="dropdown-base">
+    <a href="{{ url_for('auth.login') }}" class="dropbtn-base">Login</a>
+  </div>
+{% endif %}
+
 </nav>
 
 <!-- FLASH MESSAGES -->

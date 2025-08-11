@@ -18,7 +18,7 @@ def sign_up():
         registration_code = form.registration_code.data
 
         if registration_code != ALLOWED_CODE:
-            flash("Invalid employee registration code.")
+            flash("Invalid employee registration code.", "error")
             return render_template('signup.html', form=form)
         
 
@@ -31,11 +31,11 @@ def sign_up():
             try:
                 db.session.add(new_customer)
                 db.session.commit()
-                flash('Account Created Successfully, You can now Login')
+                flash('Account Created Successfully, You can now Login', 'success')
                 return redirect('/login')
             except Exception as e:
                 print(e)
-                flash('Account Not Created! Email already exists.')
+                flash('Account Not Created! Email already exists.', 'error')
 
             form.email.data = ''
             form.username.data = ''
@@ -58,10 +58,10 @@ def login():
                 login_user(customer)
                 return redirect (url_for('views.shop'))
             else:
-                flash('Incorrect Email or Password')
+                flash('Incorrect Email or Password', 'error')
 
         else:
-            flash('Account does not exist please sign up')
+            flash('Account does not exist please sign up', 'error')
 
     return render_template('login.html', form=form)
 

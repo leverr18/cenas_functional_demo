@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, jsonify
 from cenas_website import dictionaries
+from flask_login import login_required
+from .models import Product
 
 locations = dictionaries.locations
 menu_items = dictionaries.menu_items
@@ -78,5 +80,7 @@ def orderlocation():
     return render_template("chooselocation.html", locations=locations)
 
 @views.route('/shop')
+@login_required
 def shop():
-    return render_template('shop.html')
+    items = Product.query.order_by(Product.date_added.desc()).all()
+    return render_template('shop.html', items=items)

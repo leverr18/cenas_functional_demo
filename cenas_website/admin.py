@@ -39,17 +39,17 @@ def add_items():
             new_shop_item.product_name = product_name
             new_shop_item.in_stock = in_stock
 
-            new_shop_item.product_picture = file_path
+            new_shop_item.product_picture = file_name
 
             try:
                 db.session.add(new_shop_item)
                 db.session.commit()
-                flash(f'{product_name} added Successfully')
+                flash(f'{product_name} added Successfully', 'success')
                 print('Product Added')
                 return redirect(url_for('admin.add_items'))
             except Exception as e:
                 print(e)
-                flash('Product Not Added!!')
+                flash('Product Not Added!!', 'error')
 
         return render_template('add_shop_items.html', form=form)
     
@@ -60,7 +60,7 @@ def shop_items():
         items = Product.query.order_by(Product.date_added).all()
         return render_template('shop_items.html', items=items)
     else:
-        flash("Access Denied")
+        flash("Access Denied", "error")
         return redirect(url_for('views.shop'))
     
     

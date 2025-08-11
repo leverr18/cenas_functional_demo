@@ -1,0 +1,24 @@
+{% extends 'baselogin.html' %}
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<h2>Your Cart</h2>
+
+{% if lines|length == 0 %}
+  <p>Your cart is empty.</p>
+{% else %}
+  <ul>
+    {% for line in lines %}
+      <li>{{ line.product.product_name }} — Qty: {{ line.quantity }}</li>
+    {% endfor %}
+  </ul>
+
+  <p>Total items: {{ total_items }}</p>
+
+  <form method="POST" action="{{ url_for('cart.submit_cart') }}">
+    {{ csrf_token() if csrf_token is defined }}
+    <button type="submit">Submit Order</button>
+  </form>
+{% endif %}
+{% endblock %}
+
