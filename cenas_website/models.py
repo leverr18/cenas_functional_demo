@@ -36,6 +36,8 @@ class Product(db.Model):
     product_picture = db.Column(db.String(1000), nullable=False)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
+    category = db.Column(db.String(100), nullable=False)
+
     carts = db.relationship('Cart', backref=db.backref('product', lazy=True))
     orders = db.relationship('Order', backref=db.backref('product', lazy=True))
 

@@ -1,27 +1,32 @@
+<!-- shop.html -->
 {% extends 'baselogin.html' %}
 {% block title %}Shop{% endblock %}
 
 {% block content %}
 <h2>Shop</h2>
 
+<!-- Filter Buttons -->
+<div class="filter-buttons">
+  <a href="{{ url_for('views.shop') }}" class="btn {% if not selected %}btn-danger{% else %}btn-outline-danger{% endif %}">All</a>
+  {% for cat in categories %}
+    <a href="{{ url_for('views.shop', category=cat) }}" 
+       class="btn {% if selected == cat %}btn-danger{% else %}btn-outline-danger{% endif %}">
+      {{ cat }}
+    </a>
+  {% endfor %}
+</div>
+<hr>
+
 {% if items|length == 0 %}
   <p>No items available.</p>
 {% else %}
   {% for item in items %}
-    {# If product_picture is a full path, extract just the filename #}
-    {% set fname = (item.product_picture | replace('\\','/')).split('/')[-1] %}
-
     <div>
       {% if item.product_picture %}
-        <img
-          src="{{ url_for('admin.get_image', filename=fname) }}"
-          alt="{{ item.product_name }}"
-          width="120" height="120"
-          loading="lazy" decoding="async">
+        <img src="{{ url_for('admin.get_image', filename=item.product_picture) }}" width="120" height="120">
       {% endif %}
-
       <h3>{{ item.product_name }}</h3>
-
+      <p><strong>Category:</strong> {{ item.category }}</p>
       {% if item.in_stock|int > 0 %}
         <p>In stock ({{ item.in_stock }})</p>
         <form method="POST" action="{{ url_for('cart.add_item', product_id=item.id) }}">
@@ -31,10 +36,10 @@
         </form>
       {% else %}
         <p>Out of stock</p>
-        <button type="button" disabled>Unavailable</button>
       {% endif %}
     </div>
     <hr>
   {% endfor %}
 {% endif %}
 {% endblock %}
+

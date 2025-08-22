@@ -1,0 +1,46 @@
+{% extends 'baselogin.html' %}
+{% block title %}Edit Product{% endblock %}
+
+{% block content %}
+<h2>Edit Product</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+
+  <div class="table-responsive">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>In Stock</th>
+          <th>Category</th>
+          <th>Current Picture</th>
+          <th>Replace Picture</th>
+          <th>Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ form.product_name }}</td>
+          <td>{{ form.in_stock }}</td>
+          <td>{{ form.category }}</td>
+          <td>
+            {% if item.product_picture %}
+              {% set fname = (item.product_picture | replace('\\','/')).split('/')[-1] %}
+              <img src="{{ url_for('admin.get_image', filename=fname) }}"
+                   alt="{{ item.product_name }}"
+                   style="height: 70px; width: 70px; border-radius: 4px;">
+            {% else %}
+              <em>No image</em>
+            {% endif %}
+          </td>
+          <td>{{ form.product_picture }}</td>
+          <td>{{ form.save }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+
+<a href="{{ url_for('admin.shop_items') }}" class="btn btn-outline-light">Back to Manage Products</a>
+{% endblock %}
