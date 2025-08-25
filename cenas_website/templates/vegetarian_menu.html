@@ -1,24 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Vegetarian Menu - Cenas Kitchen{% endblock %}
+{% block title %}Vegetarian Menu{% endblock %}
 
 {% block content %}
 
-<section class="menu-header">
+<section class="menu-header-v">
   <h1>Vegetarian Menu</h1>
   <p>Explore our delicious vegetarian options</p>
 </section>
 
-<section class="menu-grid">
+<section class="menu-grid-v">
   {% for item in vegetarian_items %}
-    <div class="menu-card" data-category="vegetarian">
+    <div class="menu-card-v" data-category="vegetarian">
       {# Uncomment if you later add images: #}
       {# {% if item.image %} #}
       {#   <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}"> #}
       {# {% endif %} #}
-      <div class="menu-info">
+      <div class="menu-info-v">
         <h3>{{ item.name }}</h3>
         {% if item.price %}
-          <span class="price">${{ item.price }}</span>
+          <span class="price-v">${{ item.price }}</span>
         {% endif %}
         {% if item.description %}
           <p>{{ item.description }}</p>
@@ -26,25 +26,25 @@
         {% if item.options %}
           {% for option in item.options %}
             {% if option.variants %}
-              <div class="combo-group">
-                <p class="combo-title">{{ option.type }}</p>
-                <div class="item-options-table">
+              <div class="combo-group-v">
+                <p class="combo-title-v">{{ option.type }}</p>
+                <div class="item-options-table-v">
                   {% for v in option.variants %}
-                    <div class="option-row">
-                      <span class="option-type">{{ v.type }}</span>
+                    <div class="option-row-v">
+                      <span class="option-type-v">{{ v.type }}</span>
                       {% if v.price is defined %}
-                        <span class="option-price">${{ "%.2f"|format(v.price|float) }}</span>
+                        <span class="option-price-v">${{ "%.2f"|format(v.price|float) }}</span>
                       {% endif %}
                     </div>
                   {% endfor %}
                 </div>
               </div>
             {% else %}
-              <div class="item-options-table">
-                <div class="option-row">
-                  <span class="option-type">{{ option.type }}</span>
+              <div class="item-options-table-vegetarian">
+                <div class="option-row-vegetarian">
+                  <span class="option-type-vegetarian">{{ option.type }}</span>
                   {% if option.price is defined %}
-                    <span class="option-price">${{ "%.2f"|format(option.price|float) }}</span>
+                    <span class="option-price-vegetarian">${{ "%.2f"|format(option.price|float) }}</span>
                   {% endif %}
                 </div>
               </div>

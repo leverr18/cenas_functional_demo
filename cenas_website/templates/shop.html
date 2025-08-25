@@ -1,45 +1,111 @@
-<!-- shop.html -->
 {% extends 'baselogin.html' %}
-{% block title %}Shop{% endblock %}
+{% block title %}Corporate Order{% endblock %}
 
 {% block content %}
-<h2>Shop</h2>
+<h2>Corporate Order</h2>
 
-<!-- Filter Buttons -->
-<div class="filter-buttons">
-  <a href="{{ url_for('views.shop') }}" class="btn {% if not selected %}btn-danger{% else %}btn-outline-danger{% endif %}">All</a>
-  {% for cat in categories %}
-    <a href="{{ url_for('views.shop', category=cat) }}" 
-       class="btn {% if selected == cat %}btn-danger{% else %}btn-outline-danger{% endif %}">
-      {{ cat }}
-    </a>
-  {% endfor %}
-</div>
-<hr>
+<div class="corp-columns">
+  <!-- LEFT COLUMN: Departments -->
+  <div class="corp-col">
+    <h3 class="row-heading">Departments</h3>
+    <div class="cat-column">
+      {% for cat in row1 %}
+        <section class="category-block">
+          <header class="category-header">
+            <h4 id="{{ cat|replace(' ', '_') }}">{{ cat }}</h4>
+            <span class="count">{{ grouped.get(cat, [])|length }} item{{ '' if grouped.get(cat, [])|length == 1 else 's' }}</span>
+          </header>
 
-{% if items|length == 0 %}
-  <p>No items available.</p>
-{% else %}
-  {% for item in items %}
-    <div>
-      {% if item.product_picture %}
-        <img src="{{ url_for('admin.get_image', filename=item.product_picture) }}" width="120" height="120">
-      {% endif %}
-      <h3>{{ item.product_name }}</h3>
-      <p><strong>Category:</strong> {{ item.category }}</p>
-      {% if item.in_stock|int > 0 %}
-        <p>In stock ({{ item.in_stock }})</p>
-        <form method="POST" action="{{ url_for('cart.add_item', product_id=item.id) }}">
-          {{ csrf_token() if csrf_token is defined }}
-          <input type="hidden" name="quantity" value="1">
-          <button type="submit">Add to Cart</button>
-        </form>
-      {% else %}
-        <p>Out of stock</p>
-      {% endif %}
+          <div class="items-list">
+            {% for item in grouped.get(cat, []) %}
+              {% set fname = (item.product_picture | replace('\\','/')).split('/')[-1] %}
+              <div class="product-row">
+                {% if item.product_picture %}
+                  <img src="{{ url_for('admin.get_image', filename=fname) }}" alt="{{ item.product_name }}" loading="lazy" decoding="async">
+                {% endif %}
+
+                <div class="info">
+                  <h5>{{ item.product_name }}</h5>
+                  {% if item.in_stock|int > 0 %}
+                    <span class="badge in">In stock ({{ item.in_stock }})</span>
+                  {% else %}
+                    <span class="badge out">Out of stock</span>
+                  {% endif %}
+                </div>
+
+                {% if item.in_stock|int > 0 %}
+                  <form method="POST" action="{{ url_for('cart.add_item', product_id=item.id) }}">
+                    {{ csrf_token() if csrf_token is defined }}
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-danger btn-sm">Add</button>
+                  </form>
+                {% else %}
+                  <button type="button" class="btn btn-outline-danger btn-sm" disabled>Unavailable</button>
+                {% endif %}
+              </div>
+            {% else %}
+              <p class="empty">No items in this category.</p>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
     </div>
-    <hr>
-  {% endfor %}
-{% endif %}
+  </div>
+
+  <!-- RIGHT COLUMN: Packaging & Supplies -->
+  <div class="corp-col">
+    <h3 class="row-heading">Packaging & Supplies</h3>
+    <div class="cat-column">
+      {% for cat in row2 %}
+        <section class="category-block">
+          <header class="category-header">
+            <h4 id="{{ cat|replace(' ', '_') }}">{{ cat }}</h4>
+            <span class="count">{{ grouped.get(cat, [])|length }} item{{ '' if grouped.get(cat, [])|length == 1 else 's' }}</span>
+          </header>
+
+          <div class="items-list">
+            {% for item in grouped.get(cat, []) %}
+              {% set fname = (item.product_picture | replace('\\','/')).split('/')[-1] %}
+              <div class="product-row">
+                {% if item.product_picture %}
+                  <img src="{{ url_for('admin.get_image', filename=fname) }}" alt="{{ item.product_name }}" loading="lazy" decoding="async">
+                {% endif %}
+
+                <div class="info">
+                  <h5>{{ item.product_name }}</h5>
+                  {% if item.in_stock|int > 0 %}
+                    <span class="badge in">In stock ({{ item.in_stock }})</span>
+                  {% else %}
+                    <span class="badge out">Out of stock</span>
+                  {% endif %}
+                </div>
+
+                {% if item.in_stock|int > 0 %}
+                  <form method="POST" action="{{ url_for('cart.add_item', product_id=item.id) }}">
+                    {{ csrf_token() if csrf_token is defined }}
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-danger btn-sm">Add</button>
+                  </form>
+                {% else %}
+                  <button type="button" class="btn btn-outline-danger btn-sm" disabled>Unavailable</button>
+                {% endif %}
+              </div>
+            {% else %}
+              <p class="empty">No items in this category.</p>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% block head_extra %}
+<style>
+  :root { --nav-height: 72px; --nav-gap: 16px; }
+  @media (max-width: 640px) { :root { --nav-height: 92px; } }
+  main { padding-top: calc(var(--nav-height) + var(--nav-gap)); }
+</style>
+{% endblock %}
+
 {% endblock %}
 

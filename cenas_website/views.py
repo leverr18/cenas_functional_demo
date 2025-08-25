@@ -2,7 +2,6 @@ from flask import Blueprint, render_template, jsonify, request
 from cenas_website import dictionaries
 from flask_login import login_required
 from .models import Product
-from .forms import CATEGORIES
 
 locations = dictionaries.locations
 menu_items = dictionaries.menu_items
@@ -80,12 +79,20 @@ def drink_data():
 def orderlocation():
     return render_template("chooselocation.html", locations=locations)
 
+ROW1 = ["Bar", "Server", "Host & Togo", "Office", "Togo & Catering"]
+ROW2 = ["Uniforms", "Foam Cups and Lids", "1-3 Compartment Containers", "Aluminum Foil Pans & Containers", "Portion Cup & Lids", "Plastic & Paper Bags", "Spices", "Cleaning Supplies", "Supplies Available at Corporate"]
+
 @views.route('/shop')
 def shop():
-    category = request.args.get("category")
-    if category:
-        items = Product.query.filter_by(category=category).all()
-    else:
-        items = Product.query.all()
-    return render_template("shop.html", items=items, categories=[c[0] for c in CATEGORIES], selected=category)
+    cats_all = ROW1 + ROW2
+    # Pull everything at once, then group in Python
+    products = Product.query.filter(Product.category.in_(cats_all)).order_by(Product.date_added.desc()).all()
+    grouped = {c: [] for c in cats_all}
+    for p in products:
+        grouped.setdefault(p.category, []).append(p)
+
+    return render_template(
+        "shop.html",
+        row1=ROW1, row2=ROW2, grouped=grouped
+    )
 
